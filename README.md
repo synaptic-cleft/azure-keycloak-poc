@@ -12,9 +12,10 @@ kubectl get service azure-keycloak-poc --watch
 # keycloak container
 https://hub.docker.com/r/jboss/keycloak  
 docker run -p 8080:8080 jboss/keycloak  
-docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
 
 docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin \
     -e KEYCLOAK_IMPORT=/tmp/example-realm.json -v /tmp/example-realm.json:/tmp/example-realm.json jboss/keycloak
 
 docker run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=H2 jboss/keycloak
+
+Keycloak code copied/adapted from https://github.com/kmikulski/blog-keycloak/blob/master/keycloak-react-part1 and https://scalac.io/user-authentication-keycloak-1/ .
