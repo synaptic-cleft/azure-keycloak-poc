@@ -1,13 +1,13 @@
 # build and upload docker image
 
-docker login --username=dockersidn --password=yourpassword
-docker build -t dockersidn/azure-keycloak-poc:v1 .
-sudo docker push dockersidn/azure-keycloak-poc:v1
+docker login --username=dockersidn --password=yourpassword  
+docker build -t dockersidn/azure-keycloak-poc:v1 .  
+sudo docker push dockersidn/azure-keycloak-poc:v1  
 
 # frontend in Azure
-vi frontend-poc.yml
-kubectl apply -f frontend-poc.yml
-kubectl get service azure-keycloak-poc --watch
+vi frontend-poc.yml  
+kubectl apply -f frontend-poc.yml  
+kubectl get service azure-keycloak-poc --watch  
 
 # keycloak container
 https://hub.docker.com/r/jboss/keycloak  
